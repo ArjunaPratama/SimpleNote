@@ -10,6 +10,8 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
+    @IBOutlet weak var etDescription: UITextField!
+    @IBOutlet weak var etDay: UITextField!
     @IBOutlet weak var etNameTask: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,29 @@ class AddTaskViewController: UIViewController {
         let nameTask = Task(context: context) //deklarasi nameTask sebagai konteks dari entiti Task
         nameTask.name_task = etNameTask.text //deklarasikan bahwa nameTask.name_task itu isinya dari etNametask.text
         
+        nameTask.day_task = etDay.text
+        nameTask.des_task = etDescription.text
+        
+        
+        
+        
         //proses penyimpanan data core
         //mengecek apakah nilai dari etTask adalah kosong atau tidak
         if etNameTask.text == "" {
+            //kondisi ketika kosong
+            //tampil alert dialog
+            let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+            //menambahkan aksi ke button
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if etDay.text == "" {
+                //kondisi ketika kosong
+                //tampil alert dialog
+                let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
+                //menambahkan aksi ke button
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else if etDescription.text == "" {
             //kondisi ketika kosong
             //tampil alert dialog
             let alert = UIAlertController(title: "Warning", message: "Task Cannot Be Empty", preferredStyle: UIAlertControllerStyle.alert)
@@ -45,6 +67,7 @@ class AddTaskViewController: UIViewController {
             print("Data berhasil disimpan")
         }
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

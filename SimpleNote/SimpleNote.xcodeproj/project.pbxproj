@@ -17,6 +17,7 @@
 		DCEA4C321F9F1D1800A2B2D8 /* SimpleNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA4C311F9F1D1800A2B2D8 /* SimpleNoteUITests.swift */; };
 		DCEA4C401F9F1FF300A2B2D8 /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA4C3F1F9F1FF300A2B2D8 /* NoteTableViewController.swift */; };
 		DCEA4C421F9F201100A2B2D8 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA4C411F9F201100A2B2D8 /* AddTaskViewController.swift */; };
+		DCEA4C441F9F46CA00A2B2D8 /* YouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEA4C431F9F46CA00A2B2D8 /* YouTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DCEA4C331F9F1D1800A2B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCEA4C3F1F9F1FF300A2B2D8 /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		DCEA4C411F9F201100A2B2D8 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		DCEA4C431F9F46CA00A2B2D8 /* YouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				DCEA4C151F9F1D1700A2B2D8 /* SimpleNote.xcdatamodeld */,
 				DCEA4C3F1F9F1FF300A2B2D8 /* NoteTableViewController.swift */,
 				DCEA4C411F9F201100A2B2D8 /* AddTaskViewController.swift */,
+				DCEA4C431F9F46CA00A2B2D8 /* YouTableViewCell.swift */,
 			);
 			path = SimpleNote;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCEA4C111F9F1D1700A2B2D8 /* ViewController.swift in Sources */,
+				DCEA4C441F9F46CA00A2B2D8 /* YouTableViewCell.swift in Sources */,
 				DCEA4C401F9F1FF300A2B2D8 /* NoteTableViewController.swift in Sources */,
 				DCEA4C0F1F9F1D1700A2B2D8 /* AppDelegate.swift in Sources */,
 				DCEA4C171F9F1D1700A2B2D8 /* SimpleNote.xcdatamodeld in Sources */,

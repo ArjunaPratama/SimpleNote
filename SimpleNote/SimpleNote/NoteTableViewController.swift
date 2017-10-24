@@ -45,7 +45,11 @@ class NoteTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTable", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTable", for: indexPath) as! YouTableViewCell
+        
+//        cell.labelTask.text = names[indexPath.row]
+//        cell.labelDay.text = specials[indexPath.row]
+//        cell..text = prices[indexPath.row]
 
         // Configure the cell...
         
@@ -54,7 +58,13 @@ class NoteTableViewController: UITableViewController {
         //mengambildata dengan attribute name_Task
         if let myDataTask = dataTask.name_task {
             //menampilkan data ke label
-            cell.textLabel?.text = myDataTask
+            cell.labelTask.text = myDataTask
+        }
+        if let myDataTask1 = dataTask.day_task {
+            cell.labelDay.text = myDataTask1
+        }
+        if let myDataTask2 = dataTask.des_task {
+            cell.labelDes.text = myDataTask2
         }
         return cell
     }
