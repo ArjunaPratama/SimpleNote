@@ -45,7 +45,7 @@ class NoteTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celltable", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTable", for: indexPath)
 
         // Configure the cell...
         
@@ -56,11 +56,47 @@ class NoteTableViewController: UITableViewController {
             //menampilkan data ke label
             cell.textLabel?.text = myDataTask
         }
-
         return cell
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //memanggil method getData
+        getData()
+        //memanggil reloadData
+        tableView.reloadData()
+    }
 
+    //method getData
+    func getData() {
+        //mengecek apakah ada error atau tidak
+        do{
+            //kondisi kalau tidak ada error
+            //maka akan request download data
+            tasks = try context.fetch(Task.fetchRequest())
+        }
+        catch{
+            //kondisi apabila error fetch data
+            print("Fetching Failed")
+        }
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        //mengece menu swipe bila edit data
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            context.delete(task)
+            //Delete data
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do{
+                //retrieve data
+                tasks = try context.fetch(Task.fetchRequest())
+            }
+            catch{
+                print("Fetching Failed")
+            }
+        }
+    //load data lagi
+        tableView.reloadData()
+}
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
