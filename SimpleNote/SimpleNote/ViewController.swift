@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var lblHari: UILabel!
+    @IBOutlet weak var lblJudul: UILabel!
+    
+    @IBOutlet weak var lblisi: UILabel!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        lblHari.text = [myIndex]
+//        labelIsi.text = titleIsi[myIndex]
     }
 
     override func didReceiveMemoryWarning() {
